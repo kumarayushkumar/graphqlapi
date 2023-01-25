@@ -1,4 +1,4 @@
-## GraphqlAPI
+# GraphqlAPI
 Simple Graphql api
 
 # To add User
