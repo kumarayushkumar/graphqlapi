@@ -26,4 +26,6 @@ app.use('/', graphqlHTTP({
 app.listen(process.env.PORT, (req, res) => {
     console.log(`listening on port ${process.env.PORT}`)
     console.log(res)
+    console.log(req)
 })
+

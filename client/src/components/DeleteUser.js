@@ -15,9 +15,11 @@ function DeleteUser() {
 
     const onSubmit = (e) => {
         e.preventDefault()
-        deleteUser({ variables: { 
-            emailId: email,
-        }})
+        deleteUser({
+            variables: {
+                emailId: email,
+            }
+        })
         setEmail("")
     }
 
@@ -26,10 +28,11 @@ function DeleteUser() {
 
     return (
         <div className="container p-5">
+            <h2>Delete user</h2>
             <form onSubmit={onSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="form-control" id="email" value={email} onChange={ (e) => setEmail(e.target.value)} />
+                    <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
                 <button type="submit" className="btn btn-primary">Delete User</button>
             </form>

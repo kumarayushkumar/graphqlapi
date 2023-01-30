@@ -33,6 +33,7 @@ function AddUser() {
     
     return (
         <div className="container p-5">
+            <h2> Add user</h2>
             <form onSubmit={onSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email</label>
