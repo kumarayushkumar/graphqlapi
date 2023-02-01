@@ -1,5 +1,5 @@
 import React from "react"
-import { gql, useQuery, NetworkStatus } from "@apollo/client"
+import { gql, useQuery } from "@apollo/client"
 
 const USER = gql`
 query User($emailId: String!) {
@@ -9,28 +9,21 @@ query User($emailId: String!) {
 }`
 
 function GetUser() {
-    const [email, setEmail] = React.useState("")
+    const [emailId, setEmailId] = React.useState("")
     const { loading, error, data } = useQuery(USER, {
-        variables: { email },
+        variables: { emailId },
     })
-
-    const onSubmit = (e) => {
-        e.preventDefault()
-        setEmail("")
-    }
-
+    
     return (
         <div className="container p-5">
-            <form onSubmit={onSubmit}>
+            <form>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="email" className="form-control" id="email" value={emailId} onChange={(e) => setEmailId(e.target.value)} />
                 </div>
-                <button type="submit" className="btn btn-primary">Search</button>
             </form>
             <div className="mt-2">
-                {console.log(data)}
-                {!loading && !error && (data)}
+                {!loading && !error && (data.user != null) && (data.user.userName)}
             </div>
         </div>
     )

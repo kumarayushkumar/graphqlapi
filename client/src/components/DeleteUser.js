@@ -36,8 +36,6 @@ function DeleteUser() {
                 </div>
                 <button type="submit" className="btn btn-primary">Delete User</button>
             </form>
-
-
         </div>
     )
 }
