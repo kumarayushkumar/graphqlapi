@@ -1,5 +1,5 @@
 # GraphqlAPI
-Simple Graphql api
+Simple Graphql CRUD operations
 
 ## To add User
 mutation {
@@ -12,6 +12,13 @@ mutation {
 mutation {
   deleteUser(emailId: "xyzs@gmail.com") {
     emailId
+  }
+}
+
+## To update
+mutation {
+  updateUser(emailId: "xyz@gmail.com", newUserName: "new_xyz") {
+    userName
   }
 }
 
